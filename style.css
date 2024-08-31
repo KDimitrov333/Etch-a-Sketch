@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#grid-container {
+    display: flex;
+    background-color: gray;
+    justify-content: center;
+    align-items: stretch;
+    padding: 20px;
+    width: 1000px;
+    height: 1000px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.square {
+    height: 100%;
+    border: 1px solid black;
+    background-color: white;
+    flex-grow: 1;
+}
+
+#resize-button {
+    padding: 10px;
+}
