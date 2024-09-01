@@ -11,10 +11,11 @@ body {
 
 #grid-container {
     display: flex;
-    background-color: gray;
+    background-color: white;
     justify-content: center;
     align-items: stretch;
-    padding: 20px;
+    padding: 12px;
+    border: 2px solid black;
     width: 1000px;
     height: 1000px;
 }
@@ -31,6 +32,12 @@ body {
     border: 1px solid black;
     background-color: white;
     flex-grow: 1;
+}
+
+.square-background {
+    height: 100%;
+    background-color: white;
+    opacity: 0;
 }
 
 #resize-button {
