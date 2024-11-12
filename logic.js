@@ -9,9 +9,6 @@ for (let i = 0; i < 16; i++) {
         square.addEventListener("mouseenter", () => {
             square.style.backgroundColor = "black";
         });
-        square.addEventListener("mouseleave", () => {
-            square.style.backgroundColor = "grey";
-        })
         column.appendChild(square);
     }
     grid.appendChild(column);
@@ -33,9 +30,6 @@ function resizeGrid() {
                 square.addEventListener("mouseenter", () => {
                 square.style.backgroundColor = "black";
                 });
-                square.addEventListener("mouseleave", () => {
-                square.style.backgroundColor = "grey";
-                })
                 column.appendChild(square);
             }
             grid.appendChild(column);
