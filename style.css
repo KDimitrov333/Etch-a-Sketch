@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -7,6 +9,9 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
 }
 
 #grid-container {
@@ -15,6 +20,8 @@ body {
     justify-content: center;
     align-items: stretch;
     padding: 20px;
+    max-width: 90vw;
+    max-height: 90vw;
     width: 1000px;
     height: 1000px;
 }
@@ -33,6 +40,20 @@ body {
     flex-grow: 1;
 }
 
+.square:hover {
+    background-color: black;
+}
+
 #resize-button {
     padding: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#resize-button:hover {
+    background-color: #0056b3;
 }

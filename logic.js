@@ -1,44 +1,33 @@
-const grid = document.querySelector("#grid-container");
+const gridContainer = document.querySelector("#grid-container");
 
-for (let i = 0; i < 16; i++) {
-    const column = document.createElement("div");
-    column.classList.add("column");
-    for (let j = 0; j < 16; j++) {
-        const square = document.createElement("div");
-        square.classList.add("square");
-        square.addEventListener("mouseenter", () => {
-            square.style.backgroundColor = "black";
-        });
-        column.appendChild(square);
-    }
-    grid.appendChild(column);
-}
-
-function resizeGrid() {
-    const newSize = prompt("Enter new size for the grid from 1 to 100:");
-    if (newSize >= 1 && newSize <= 100) {
-        let oldGrid = document.getElementsByClassName("column");
-        while (oldGrid[0]) {
-            oldGrid[0].parentNode.removeChild(oldGrid[0]);
-        }
-        for (let i = 0; i < newSize; i++) {
-            const column = document.createElement("div");
-            column.classList.add("column");
-            for (let j = 0; j < newSize; j++) {
-                const square = document.createElement("div");
-                square.classList.add("square");
-                square.addEventListener("mouseenter", () => {
+// Function to create the grid
+function createGrid(size) {
+    gridContainer.innerHTML = ""; // Clear previous grid
+    for (let i = 0; i < size; i++) {
+        const column = document.createElement("div");
+        column.classList.add("column");
+        for (let j = 0; j < size; j++) {
+            const square = document.createElement("div");
+            square.classList.add("square");
+            square.addEventListener("mouseenter", () => {
                 square.style.backgroundColor = "black";
-                });
-                column.appendChild(square);
-            }
-            grid.appendChild(column);
+            });
+            column.appendChild(square);
         }
-    }
-    else {
-        alert("Invalid size");
+        gridContainer.appendChild(column);
     }
 }
 
-const resizeBtn = document.querySelector("#resize-button");
-resizeBtn.addEventListener("click", resizeGrid);
+// Function to resize the grid
+function resizeGrid() {
+    const newSize = parseInt(prompt("Enter new size for the grid (1–100):").trim());
+    if (newSize >= 1 && newSize <= 100) {
+        createGrid(newSize);
+    } else {
+        alert("Invalid size. Please enter a number between 1 and 100.");
+    }
+}
+
+// Initialize default grid and set resize button event listener
+document.querySelector("#resize-button").addEventListener("click", resizeGrid);
+createGrid(16);
